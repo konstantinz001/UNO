@@ -2,16 +2,16 @@ package UNO.util
 
 import UNO.UnoGame.controller
 
-trait Event
+trait Eventt
 
-case class strategyEvent1() extends Event {
+case class strategyEvent1() extends Eventt {
   def strategy1 = {
     controller.playerList = List(controller.playerList(1), controller.playerList(0).setPlayerCards(controller.stackCard(0)))
     controller.stackCard = controller.stackCard diff List(controller.stackCard(0))
   }
 }
 
-case class strategyEvent2(handindex:Int) extends Event {
+case class strategyEvent2(handindex:Int) extends Eventt {
   def strategy2 = {
     val currentcard = controller.playerList(0).playerCards(handindex)
     if ((currentcard.color == controller.playStack.color) || currentcard.number == controller.playStack.number) {
