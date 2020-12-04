@@ -13,6 +13,7 @@ class controller extends Observable {
   var stackCard = List(Card(1, "red"), Card(2, "green"), Card(3, "green"))
   var playStack = Card(5, "green")
   var playerList = playerToList(createPlayer(playername1), createPlayer(playername2))
+  var playStack2:List[Card] = List(playStack)
 
 
   def createPlayer(printerName: String): Player = {

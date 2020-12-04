@@ -45,8 +45,6 @@ class TUI (controller: controller) extends Observer {
       }
       case "q" => {
         State.handle(exitGameEvent())
-        System.exit(0)
-
       }
     }
   }
