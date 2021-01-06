@@ -44,6 +44,8 @@ class SwingGui(controller: controller) extends Frame {
     }
 
     contents += new GridPanel(1, controller.playerList(0).playerCards.size) {
+      contents+= new Label("Current Player")
+      contents+= new Label(controller.playerList(0).name)
       border = LineBorder(java.awt.Color.lightGray, 50)
       background = java.awt.Color.lightGray
 
@@ -86,6 +88,13 @@ class SwingGui(controller: controller) extends Frame {
 
   contents = new BorderPanel {
     add(gamePanel, Position.Center)
+  }
+  menuBar = new MenuBar {
+    contents += new Menu("Edit") {
+      contents+= new MenuItem(Action("Undo") { controller.undoGet})
+      contents += new MenuItem(Action("Redo") { controller.redoGet})
+    }
+
   }
 
   def redraw = {
