@@ -1,8 +1,8 @@
 
 package UNO.aview.gui
 
-import UNO.controller.controller
-import UNO.model.Card
+import UNO.controller.controllerBaseImpl.controller
+import UNO.model.cardsComponent.Card
 import UNO.util.{Strategy, removeCardEvent}
 
 import scala.swing._

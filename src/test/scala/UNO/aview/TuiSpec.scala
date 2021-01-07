@@ -2,8 +2,8 @@ package UNO.aview
 
 import UNO.UnoGame.controller
 import UNO.aview.TUI
-import UNO.controller.controller
-import UNO.model.Card
+import UNO.controller.controllerBaseImpl.controller
+import UNO.model.cardsComponent.Card
 import UNO.util.State.handle
 import UNO.util.{State, _}
 import org.scalatest._

@@ -1,8 +1,8 @@
 package UNO.util
 
 import UNO.UnoGame.controller
-import UNO.controller.GameStatus
-import UNO.controller.GameStatus._
+import UNO.controller.controllerBaseImpl.GameStatus._
+import UNO.controller.controllerBaseImpl.GameStatus
 
 trait Event
 

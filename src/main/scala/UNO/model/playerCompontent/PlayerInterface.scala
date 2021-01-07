@@ -1,6 +1,6 @@
 package UNO.model.playerCompontent
 
-import UNO.model.Card
+import UNO.model.cardsComponent.Card
 import UNO.model.playerCompontent.PlayerBaseImpl.Player
 
 

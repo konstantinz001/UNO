@@ -1,7 +1,8 @@
 package UNO.controller
 
 import UNO.UnoGame.controller
-import UNO.model.Card
+import UNO.controller.controllerBaseImpl.RemoveCommand
+import UNO.model.cardsComponent.Card
 import UNO.util.UndoManager
 import org.scalatest.{Matchers, WordSpec}
 

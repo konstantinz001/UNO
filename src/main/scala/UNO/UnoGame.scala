@@ -1,10 +1,11 @@
 package UNO
 
 import UNO.aview.gui.SwingGui
+import UNO.controller.controllerBaseImpl.{controller, updateStates}
 
 import scala.io.StdIn.readLine
 import aview.TUI
-import UNO.controller.{controller, updateStates}
+import UNO.controller.updateStates
 import UNO.util.{State, gameStatsEvent, instructionEvent}
 
 object UnoGame {

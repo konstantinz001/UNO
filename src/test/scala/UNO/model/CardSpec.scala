@@ -1,5 +1,6 @@
 package UNO.model
 
+import UNO.model.cardsComponent.Card
 import org.scalatest._
 
 class CardSpec extends WordSpec with Matchers {

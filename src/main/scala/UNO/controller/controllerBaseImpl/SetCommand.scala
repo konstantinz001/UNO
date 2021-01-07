@@ -1,6 +1,5 @@
-package UNO.controller
+package UNO.controller.controllerBaseImpl
 
-import UNO.UnoGame.controller
 import UNO.util.Command
 
 

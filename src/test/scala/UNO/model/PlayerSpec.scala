@@ -1,6 +1,7 @@
 package UNO.model
 
 import UNO.UnoGame.controller
+import UNO.model.cardsComponent.Card
 import UNO.model.playerCompontent.PlayerBaseImpl.Player
 
 import scala.util.{Failure, Success, Try}

@@ -1,4 +1,5 @@
 package UNO.model
+import UNO.model.cardsComponent.Card
 import UNO.model.cardsComponent.StackBaseImpl.Stack
 import org.scalatest.{Matchers, WordSpec}
 

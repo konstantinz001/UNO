@@ -1,7 +1,4 @@
-package UNO.controller
-
-import UNO.model.playerCompontent.PlayerBaseImpl.Player
-
+package UNO.controller.controllerBaseImpl
 
 object GameStatus extends Enumeration {
   type GameStatus = Value
@@ -9,8 +6,8 @@ object GameStatus extends Enumeration {
 
   val map = Map[GameStatus, String](
     IDLE -> "",
-    WON ->"You won",
-    LOST ->"You lost")
+    WON -> "You won",
+    LOST -> "You lost")
 
   def message(gameStatus: GameStatus) = {
     map(gameStatus)

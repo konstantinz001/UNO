@@ -1,4 +1,4 @@
-package UNO.controller
+package UNO.controller.controllerBaseImpl
 
 import scala.swing.event.Event
 

@@ -1,8 +1,8 @@
 package UNO.aview
 
-import UNO.controller.controller
 import UNO.util.{State, Strategy, callFirstUnoEvent, callSecondUnoEvent, exitGameEvent, forgotCallUnoEvent, gameStatsEvent, removeCardEvent, removeFalseCardEvent, removePlayerCardEvent, setPlayerCardEvent, toManyCardsEvent}
 import UNO.controller._
+import UNO.controller.controllerBaseImpl.{controller, updateStates}
 
 import scala.swing.Reactor
 

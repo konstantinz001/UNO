@@ -1,4 +1,4 @@
-package UNO.model
+package UNO.model.cardsComponent
 
 case class Card(value: String, color: String) {
   override def toString: String = {

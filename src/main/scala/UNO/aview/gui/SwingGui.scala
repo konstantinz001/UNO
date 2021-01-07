@@ -1,10 +1,11 @@
 package UNO.aview.gui
 
-import UNO.controller.{controller, updateStates}
+import UNO.controller.controllerBaseImpl.{controller, updateStates}
+import UNO.controller.updateStates
 
 import scala.swing.BorderPanel.Position
-import scala.swing.{_}
-import scala.swing.Swing.{LineBorder}
+import scala.swing._
+import scala.swing.Swing.LineBorder
 import scala.swing.event.ButtonClicked
 
 class SwingGui(controller: controller) extends Frame {

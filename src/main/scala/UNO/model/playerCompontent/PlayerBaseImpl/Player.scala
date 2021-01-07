@@ -1,6 +1,7 @@
 package UNO.model.playerCompontent.PlayerBaseImpl
 
-import UNO.model.Card
+
+import UNO.model.cardsComponent.Card
 
 import scala.util.{Failure, Success, Try}
 

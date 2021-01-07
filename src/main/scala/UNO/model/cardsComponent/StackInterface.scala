@@ -1,6 +1,6 @@
 package UNO.model.cardsComponent.StackBaseImpl
 
-import UNO.model.Card
+import UNO.model.cardsComponent.Card
 
 trait StackInterface {
   def initStack(): Stack

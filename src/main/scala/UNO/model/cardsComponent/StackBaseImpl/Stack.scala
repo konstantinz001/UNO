@@ -1,6 +1,7 @@
 package UNO.model.cardsComponent.StackBaseImpl
 
-import UNO.model.Card
+
+import UNO.model.cardsComponent.Card
 
 import scala.util.Random
 

@@ -1,8 +1,8 @@
 package UNO.util
 
 import UNO.UnoGame.controller
-import UNO.controller.GameStatus
-import UNO.controller.GameStatus.WON
+import UNO.controller.controllerBaseImpl.GameStatus.WON
+import UNO.controller.controllerBaseImpl.GameStatus
 import org.scalatest.{Matchers, WordSpec}
 import UNO.util._
 

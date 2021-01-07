@@ -1,6 +1,7 @@
 package UNO.controller
 
-import UNO.controller.GameStatus.{GameStatus, _}
+import UNO.controller.controllerBaseImpl.GameStatus
+import UNO.controller.controllerBaseImpl.GameStatus.{GameStatus, _}
 import UNO.util.Observer
 import org.scalatest.{Matchers, WordSpec, color}
 
