@@ -1,7 +1,9 @@
 package UNO.controller
 
-import scala.io.StdIn.readLine
+
 import UNO.model.Card
+
+import scala.io.StdIn.readLine
 import UNO.util.Command
 
 

@@ -1,9 +1,10 @@
-package UNO.model
-import scala.util.{Try,Failure, Success}
+package UNO.model.playerCompontent.PlayerBaseImpl
 
+import UNO.model.Card
 
+import scala.util.{Failure, Success, Try}
 
-case class Player (name: String, playerCards:List[Card]) {
+case class Player(name: String, playerCards: List[Card]) {
 
   override def toString: String = {
     name + "\n" + playerCards + "\n"

@@ -1,7 +1,5 @@
 package UNO.model
-import UNO.model.Stack
-import UNO.model.Card
-
+import UNO.model.cardsComponent.StackBaseImpl.Stack
 import org.scalatest.{Matchers, WordSpec}
 
 class StackSpec extends WordSpec with Matchers {

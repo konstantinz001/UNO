@@ -1,6 +1,6 @@
 package UNO.controller
 
-import UNO.model.{Card, Player}
+import UNO.model.playerCompontent.PlayerBaseImpl.Player
 
 
 object GameStatus extends Enumeration {
