@@ -1,7 +1,9 @@
 package UNO.aview
 
-import UNO.controller.controllerComponent.controllerBaseImp.updateStates
-import UNO.util.{State, Strategy, callFirstUnoEvent, callSecondUnoEvent, exitGameEvent, forgotCallUnoEvent, gameStatsEvent, removeCardEvent, removeFalseCardEvent, removePlayerCardEvent, setPlayerCardEvent, toManyCardsEvent}
+import UNO.controller.controllerComponent.controllerBaseImp. updateStates
+import UNO.util.{State, Strategy, callFirstUnoEvent, callSecondUnoEvent, exitGameEvent,
+  forgotCallUnoEvent, gameStatsEvent, removeCardEvent, removeFalseCardEvent, removePlayerCardEvent,
+  setPlayerCardEvent, toManyCardsEvent}
 import UNO.controller.controllerComponent.controllerInterface
 
 import scala.swing.Reactor
@@ -15,14 +17,20 @@ class TUI (controller: controllerInterface) extends Reactor {
     val is: Array[String] = input.split(" ")
     is(0) match {
 
+      case "n" => {
+        controller.playername1 = is(1)
+        controller.playername2 = is(2)
+        ""
+      }
+
       case "s" => {
         controller.getCard()
         State.handle(setPlayerCardEvent())
       }
       case "r" => {
         if (controller.playerList(0).playerCards(is(1).toInt).color == "black") {
-          controller.colorSet = is(2)
-        }
+        controller.colorSet = is(2)
+      }
         if (Strategy.handle(removeCardEvent(is(1).toInt),is(1).toInt) && controller.playerList(0).playerCards.size >= 3) {
           controller.removeCard(is(1).toInt)
           State.handle(removePlayerCardEvent(is(1).toInt),is(1).toInt)
@@ -92,8 +100,7 @@ class TUI (controller: controllerInterface) extends Reactor {
     case event: updateStates => print1
   }
 
-  def print1:Unit= {
-    print(State.handle(gameStatsEvent()))
-
+   def print1:Unit= {
+     print(State.handle(gameStatsEvent()))
   }
 }
