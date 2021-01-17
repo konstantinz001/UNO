@@ -1,7 +1,7 @@
 package UNO.aview.gui
 
 
-import UNO.controller.controllerComponent.controllerBaseImp.{NameStates, updateStates}
+import UNO.controller.controllerComponent.controllerBaseImp.{updateStates}
 import UNO.controller.controllerComponent.controllerInterface
 
 import java.awt.Image
@@ -304,7 +304,6 @@ class SwingGui(controller: controllerInterface) extends Frame {
 
   reactions += {
     case a: updateStates => redraw
-    case b: NameStates => redraw3
 
   }
   visible = true
