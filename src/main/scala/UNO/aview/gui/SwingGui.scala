@@ -1,6 +1,7 @@
 package UNO.aview.gui
 
-import UNO.controller.controllerComponent.controllerBaseImp. updateStates
+
+import UNO.controller.controllerComponent.controllerBaseImp.{updateStates}
 import UNO.controller.controllerComponent.controllerInterface
 
 import java.awt.Image
@@ -24,10 +25,12 @@ class SwingGui(controller: controllerInterface) extends Frame {
       border = LineBorder(java.awt.Color.DARK_GRAY, 50)
       background = java.awt.Color.DARK_GRAY
 
-      (1 to controller.playerList(1).playerCards.length).foreach(i => {
+      for (i <- 1 to controller.playerList(1).playerCards.length) {
+
         val cardPanel = new CardPanel(1, i - 1, controller)
         contents += cardPanel.card
-      })
+      }
+
     }
 
     contents += new GridPanel(1, 4) {
@@ -54,30 +57,15 @@ class SwingGui(controller: controllerInterface) extends Frame {
       }
     }
 
-
-    contents += new GridPanel(1, controller.playerList(0).playerCards.size+1) {
+    contents += new GridPanel(1, controller.playerList(0).playerCards.size) {
       border = LineBorder(java.awt.Color.DARK_GRAY, 50)
       background = java.awt.Color.DARK_GRAY
 
-      var cards: List[BoxPanel]  = List.empty
-      (1 to controller.playerList(0).playerCards.length).foreach(i => {
+      for (i <- 1 to controller.playerList(0).playerCards.length) {
+
         val cardPanel = new CardPanel(0, i - 1, controller)
-        cards = cardPanel.card :: cards
-      })
-
-      cards.map(x=> x.visible = false)
-
-      val showButton = new Button("Show Cards!")
-      listenTo(showButton)
-      reactions += {
-        case ButtonClicked(`showButton`) =>
-          if (cards(0).visible == true)
-            cards.map(x => x.visible = false)
-          else if (cards(0).visible == false)
-            cards.map(x => x.visible = true)
+        contents += cardPanel.card
       }
-      contents ++= cards
-      contents += showButton
     }
 
     contents += new GridPanel(1, 4) {
@@ -174,7 +162,7 @@ class SwingGui(controller: controllerInterface) extends Frame {
         mnemonic = Key.F
         contents += new MenuItem(Action("New") {
           controller.setDefault()
-        })
+        }) //TODO
         contents += new MenuItem(Action("Save") {
           controller.save
         })
@@ -192,11 +180,6 @@ class SwingGui(controller: controllerInterface) extends Frame {
         })
         contents += new MenuItem(Action("Redo") {
           controller.redoGet
-        })
-      }
-      contents += new Menu("Info") {
-        mnemonic = Key.V
-        contents += new MenuItem(Action("Gamerule") {
         })
       }
     }
@@ -234,6 +217,8 @@ class SwingGui(controller: controllerInterface) extends Frame {
       reactions += {
         case ButtonClicked(`yesButton`) => {
           controller.setDefault()
+          //close()
+
         }
         case ButtonClicked(`noButton`) => {
           System.exit(0)
@@ -319,10 +304,9 @@ class SwingGui(controller: controllerInterface) extends Frame {
   }
 
   reactions += {
-    case event: updateStates => redraw
+    case a: updateStates => redraw
 
   }
-
   visible = true
 
   def scaledImageIcon(path: String, width: Int, height: Int): ImageIcon = {
