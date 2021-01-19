@@ -7,6 +7,8 @@ import UNO.model.PlayerComponent.playerBaseImp.Player
 import UNO.model.cardComponent.cardBaseImp.Card
 import UNO.model.stackComponent.stackBaseImp.Stack
 
+//TODO STUB
+
 
 class Controller extends controllerInterface{
 
@@ -42,6 +44,8 @@ class Controller extends controllerInterface{
   override def save: Unit = {}
 
   override def load: Unit = {}
+
+  //override val gui: SwingGui = new SwingGui(this)
 
   override def setDefault(): Unit = {}
 
