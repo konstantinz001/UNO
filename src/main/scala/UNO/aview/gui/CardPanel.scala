@@ -1,6 +1,6 @@
-
 package UNO.aview.gui
 
+import UNO.UnoGame
 import UNO.controller.controllerComponent.controllerInterface
 import UNO.model.cardComponent.cardBaseImp.Card
 import UNO.util.{Strategy, removeCardEvent}
@@ -69,23 +69,23 @@ class CardPanel(list:Int, index: Int ,controller:controllerInterface) extends Fl
     }) {
       if (list == 0) {
         reactions += {
-        case event.ButtonClicked(_) =>
-          if ((Strategy.handle(removeCardEvent(index),index) && controller.playerList.head.playerCards.size >= 3 && !controller.unoCall)
-                    || controller.playerList.head.playerCards.size == 2 && controller.unoCall) {
-            controller.removeCard(index)
-          }
-          else if (controller.playerList.head.playerCards.size == 1 && controller.unoCall) {
-            //controller.gui.redraw2
-          }
-          else if (!Strategy.handle(removeCardEvent(index),index)){}
+          case event.ButtonClicked(_) =>
+            if ((Strategy.handle(removeCardEvent(index),index) && controller.playerList.head.playerCards.size >= 3 && !controller.unoCall)
+              || controller.playerList.head.playerCards.size == 2 && controller.unoCall) {
+              controller.removeCard(index)
+            }
+            else if (controller.playerList.head.playerCards.size == 1 && controller.unoCall) {
+              //UnoGame.gui.redraw2
+            }
+            else if (!Strategy.handle(removeCardEvent(index),index)){}
 
-          else {
-            controller.removeCard(index)
-            controller.playerList = controller.playerList.reverse
-            controller.getCard()
-            controller.playerList = controller.playerList.reverse
-            controller.getCard()
-          }
+            else {
+              controller.removeCard(index)
+              controller.playerList = controller.playerList.reverse
+              controller.getCard()
+              controller.playerList = controller.playerList.reverse
+              controller.getCard()
+            }
         }
       } else if (list == 4) {
         reactions += {
@@ -122,5 +122,3 @@ class CardPanel(list:Int, index: Int ,controller:controllerInterface) extends Fl
     background = java.awt.Color.DARK_GRAY
   }
 }
-
-
