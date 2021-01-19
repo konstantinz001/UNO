@@ -75,7 +75,7 @@ class CardPanel(list:Int, index: Int ,controller:controllerInterface) extends Fl
             controller.removeCard(index)
           }
           else if (controller.playerList.head.playerCards.size == 1 && controller.unoCall) {
-            controller.gui.redraw2
+            //controller.gui.redraw2
           }
           else if (!Strategy.handle(removeCardEvent(index),index)){}
 

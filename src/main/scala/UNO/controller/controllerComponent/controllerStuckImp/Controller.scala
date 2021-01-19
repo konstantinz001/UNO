@@ -45,7 +45,7 @@ class Controller extends controllerInterface{
 
   override def load: Unit = {}
 
-  override val gui: SwingGui = new SwingGui(this)
+  //override val gui: SwingGui = new SwingGui(this)
 
   override def setDefault(): Unit = {}
 
